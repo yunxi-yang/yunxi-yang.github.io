@@ -1,0 +1,76 @@
+---
+title: "dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
+---
+
+```{r}
+# R set up
+library(tidyverse)
+library(p8105.datasets)
+library(flexdashboard)
+library(plotly)
+data("ny_noaa")
+```
+
+```{r}
+# Pull out the weather data in 2010 from the main data set, and perform some data cleaning for this data set; Select the days with non-zero snowfalls
+ny_noaa_df= 
+  ny_noaa %>%
+  janitor::clean_names() %>%
+  separate(col = date, into = c ("year", "month", "day") , sep = "-", convert = TRUE) %>%
+  arrange(month) %>%
+  mutate(
+    year = as.integer(year),
+    month = month.abb[month],
+    day = as.integer(day),
+    snowfall = as.numeric(snow)*25.4,
+    tmax = as.numeric(tmax) / 10,
+    tmin = as.numeric(tmin) / 10
+    ) %>%
+  drop_na() %>%
+  filter(
+    snow > 0, 
+    snow < 100,
+    year == 2010) %>%
+  select(id, year, month, day, snowfall, tmax, tmin)
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A: Snowfalls in NY for different months in 2010
+
+```{r}
+ny_noaa_df %>% 
+  mutate(month = fct_reorder(month, snowfall)) %>% 
+  plot_ly(y = ~snowfall, color = ~month, type = "box", colors = "viridis")
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B: Number of snowy days observed by NY stations in 2010
+
+```{r}
+ny_noaa_df %>% 
+  count(id) %>% 
+  mutate(id = fct_reorder(id, n)) %>% 
+  plot_ly(x = ~id, y = ~n, color = ~id, type = "bar", colors = "viridis")
+```
+
+### Chart C: Temperatures and snowfall in NY in 2010
+
+```{r}
+scatter_ggplot = 
+  ny_noaa_df %>%
+  ggplot(aes(x = tmin, y = tmax, color = snowfall, colors = "viridis")) +
+  geom_point(alpha = 0.25) +
+  coord_cartesian()
+  
+ggplotly(scatter_ggplot)
+```
