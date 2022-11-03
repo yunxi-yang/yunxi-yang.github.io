@@ -1,0 +1,39 @@
+---
+title: "Yunxi's Personal Website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: spacelab
+---
+
+
+# Hi! Nice to meet you!
+
+My name is Yunxi, or you can call me Heather.
+
+I am currently persuing my master's degree in Biostatistics at Columbia University.
+
+I love listening to music and taking photographs during my leisure time.
+
+
+![](images/me.jpeg)
+
+## I like music
+
+
+[Hyukoh](https://en.wikipedia.org/wiki/Hyukoh) is a South Korean indie band.
+
+
+![](images/hyukoh.png)
+
+
+## I like doing photography
+
+
+* Here are some of my photography works!
+
+
+![](images/photo1.jpg)
+
+![](images/photo2.jpg)

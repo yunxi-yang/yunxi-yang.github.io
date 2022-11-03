@@ -1,0 +1,56 @@
+---
+title: "About me"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: spacelab
+---
+
+# Information About Me
+
+![](images/columbia-university.png)
+
+### ACADEMIC EXPERIENCE
+
+* 2022.09 - 2024.05
+Columbia University New York City, U.S. MS in Biostatistics, Public Health Data Science
+
+* 2018.09 - 2022.06
+University of Washington Seattle, U.S. BSc in Economics with minors in Applied Mathematics & Nutrition
+
+### AWARDS
+
+Singapore SM1 Government Full Scholarship
+UW Annual Dean’s List
+
+### PROFESSIONAL EXPERIENCE
+
+* 2021.08 - 2021.10
+Monitor Deloitte: Consulting Summer Analyst
+
+* 2020.10 - 2021.01
+Boston Consulting Group: Consulting Project Intern
+
+* 2020.07 - 2020.10
+AbbVie, Inc.: Marketing Strategy Intern
+
+* 2019.06 - 2019.09
+NetEase, Inc.: Product Operation Intern
+
+### LEADERSHIP & VOLUNTEER
+
+* 2021.03 - 2021.07
+A Better Community Consulting Group (ABC): Successfully assisted client to transform into a public fundraiser
+
+* 2020.02 - 2021.07
+UW Technology and Business Association (TBA): Built connection bridge for 200+ students with 30+ professionals
+
+* 2019.01 - 2022.03
+UW Chinese Theater Club (CTC): Produced 6 seasonal plays for 2000+ audiences
+
+### OTHERS
+
+Skill & Software: Excel; PowerPoint; SQL; R; MatLab; Stata; Java; Bloomberg; Adobe; Thinkcell 
+
+Language: Chinese (Native); English (Advanced)
